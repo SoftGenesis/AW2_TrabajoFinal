@@ -1,0 +1,227 @@
+[
+  {
+    "id": 1,
+    "nombre": "Camiseta básica",
+    "descripcion": "Camiseta de algodón con cuello redondo. Disponible en varios colores.",
+    "precio_compra": 15.95,
+    "precio_venta": 20,
+    "imagen": "camiseta_basica.jpg",
+    "categoria": "Remeras"
+  },
+  {
+    "id": 2,
+    "nombre": "Vaqueros ajustados",
+    "descripcion": "Vaqueros ajustados de mezclilla resistente. Estilo clásico de 5 bolsillos.",
+    "precio_compra": 29.99,
+    "precio_venta": 20,
+    "imagen": "vaqueros_ajustados.jpg",
+    "categoria": "Pantalones"
+  },
+  {
+    "id": 3,
+    "nombre": "Zapatillas deportivas",
+    "descripcion": "Zapatillas deportivas con suela amortiguada y tejido transpirable.",
+    "precio_compra": 49.99,
+    "precio_venta": 20,
+    "imagen": "zapatillas_deportivas.jpg",
+    "categoria": "Calzado"
+  },
+  {
+    "id": 4,
+    "nombre": "Reloj de pulsera",
+    "descripcion": "Reloj de pulsera analógico con correa de cuero. Resistente al agua.",
+    "precio_compra": 79.99,
+    "precio_venta": 20,
+    "imagen": "reloj_pulsera.jpg",
+    "categoria": "Accesorios"
+  },
+  {
+    "id": 5,
+    "nombre": "Bolso de cuero",
+    "descripcion": "Bolso de cuero genuino con múltiples compartimentos. Correa ajustable.",
+    "precio_compra": 99.99,
+    "precio_venta": 20,
+    "imagen": "bolso_cuero.jpg",
+    "categoria": "Accesorios"
+  },
+  {
+    "id": 6,
+    "nombre": "Jersey de punto",
+    "descripcion": "Jersey de punto suave y cálido con cuello redondo. Ideal para el invierno.",
+    "precio_compra": 39.99,
+    "precio_venta": 20,
+    "imagen": "jersey_punto.jpg",
+    "categoria": "Vestido"
+  },
+  {
+    "id": 7,
+    "nombre": "Pantalones chinos",
+    "descripcion": "Pantalones chinos de algodón con corte slim. Perfectos para cualquier ocasión.",
+    "precio_compra": 34.99,
+    "precio_venta": 20,
+    "imagen": "pantalones_chinos.jpg",
+    "categoria": "Pantalones"
+  },
+  {
+    "id": 8,
+    "nombre": "Bikini estampado",
+    "descripcion": "Bikini de dos piezas con estampado floral. Disponible en varias tallas.",
+    "precio_compra": 24.99,
+    "precio_venta": 20,
+    "imagen": "bikini_estampado.jpg",
+    "categoria": "Bikini"
+  },
+  {
+    "id": 9,
+    "nombre": "Gafas de sol",
+    "descripcion": "Gafas de sol polarizadas con montura de metal. Protección UV 400.",
+    "precio_compra": 19.99,
+    "precio_venta": 20,
+    "imagen": "gafas_sol.jpg",
+    "categoria": "Accesorios"
+  },
+  {
+    "id": 10,
+    "nombre": "Chaqueta vaquera",
+    "descripcion": "Chaqueta vaquera con cierre de botones y bolsillos frontales.",
+    "precio_compra": 59.99,
+    "precio_venta": 20,
+    "imagen": "chaqueta_vaquera.jpg",
+    "categoria": "Camisas"
+  },
+  {
+    "id": 11,
+    "nombre": "Vestido estampado",
+    "descripcion": "Vestido estampado de manga corta con cinturón ajustable. Largo hasta la rodilla.",
+    "precio_compra": 44.99,
+    "precio_venta": 20,
+    "imagen": "vestido_estampado.jpg",
+    "categoria": "Vestido"
+  },
+  {
+    "id": 12,
+    "nombre": "Mochila urbana",
+    "descripcion": "Mochila urbana con compartimento para portátil y bolsillos laterales.",
+    "precio_compra": 29.99,
+    "precio_venta": 20,
+    "imagen": "mochila_urbana.jpg",
+    "categoria": "Accesorios"
+  },
+  {
+    "id": 13,
+    "nombre": "Sudadera con capucha",
+    "descripcion": "Sudadera con capucha y bolsillo tipo canguro. Ideal para el día a día.",
+    "precio_compra": 37.99,
+    "precio_venta": 20,
+    "imagen": "sudadera_capucha.jpg",
+    "categoria": "Remeras"
+  },
+  {
+    "id": 14,
+    "nombre": "Botines de piel",
+    "descripcion": "Botines de piel sintética con tacón bajo y cierre de cremallera lateral.",
+    "precio_compra": 54.99,
+    "precio_venta": 20,
+    "imagen": "botines_piel.jpg",
+    "categoria": "Calzado"
+  },
+  {
+    "id": 15,
+    "nombre": "Pantalones cortos",
+    "descripcion": "Pantalones cortos de algodón con bolsillos laterales y cierre de botón.",
+    "precio_compra": 19.99,
+    "precio_venta": 20,
+    "imagen": "pantalones_cortos.jpg",
+    "categoria": "Pantalones"
+  },
+  {
+    "id": 16,
+    "nombre": "Abrigo de invierno",
+    "descripcion": "Abrigo de invierno acolchado con capucha desmontable. Cálido y resistente al agua.",
+    "precio_compra": 89.99,
+    "precio_venta": 20,
+    "imagen": "abrigo_invierno.jpg",
+    "categoria": "Abrigos"
+  },
+  {
+    "id": 17,
+    "nombre": "Falda plisada",
+    "descripcion": "Falda plisada de tela ligera con estampado a cuadros. Cintura elástica.",
+    "precio_compra": 29.99,
+    "precio_venta": 20,
+    "imagen": "falda_plisada.jpg",
+    "categoria": "Faldas"
+  },
+  {
+    "id": 18,
+    "nombre": "Gorra de béisbol",
+    "descripcion": "Gorra de béisbol ajustable con logo bordado en la parte frontal.",
+    "precio_compra": 14.99,
+    "precio_venta": 20,
+    "imagen": "gorra_beisbol.jpg",
+    "categoria": "Accesorios"
+  },
+  {
+    "id": 19,
+    "nombre": "Polo de manga larga",
+    "descripcion": "Polo de manga larga con cuello clásico y logo bordado en el pecho.",
+    "precio_compra": 22.99,
+    "precio_venta": 20,
+    "imagen": "polo_manga_larga.jpg",
+    "categoria": "Remeras"
+  },
+  {
+    "id": 20,
+    "nombre": "Cartera de piel",
+    "descripcion": "Cartera de piel genuina con múltiples compartimentos para tarjetas y billetes.",
+    "precio_compra": 39.99,
+    "precio_venta": 20,
+    "imagen": "cartera_piel.jpg",
+    "categoria": "Accesorios"
+  },
+  {
+    "id": 21,
+    "nombre": "Blusa elegante",
+    "descripcion": "Blusa elegante de tela ligera con cuello en V y detalle de lazo.",
+    "precio_compra": 32.99,
+    "precio_venta": 20,
+    "imagen": "blusa_elegante.jpg",
+    "categoria": "Camisas"
+  },
+  {
+    "id": 22,
+    "nombre": "Sandalias de cuero",
+    "descripcion": "Sandalias de cuero con suela acolchada y cierre de hebilla ajustable.",
+    "precio_compra": 49.99,
+    "precio_venta": 20,
+    "imagen": "sandalias_cuero.jpg",
+    "categoria": "Calzado"
+  },
+  {
+    "id": 23,
+    "nombre": "Chaqueta acolchada",
+    "descripcion": "Chaqueta acolchada con forro polar en el interior. Ideal para el entretiempo.",
+    "precio_compra": 69.99,
+    "precio_venta": 20,
+    "imagen": "chaqueta_acolchada.jpg",
+    "categoria": "Camisas"
+  },
+  {
+    "id": 24,
+    "nombre": "Vestido de fiesta",
+    "descripcion": "Vestido de fiesta largo con escote en V y detalle de pedrería.",
+    "precio_compra": 79.99,
+    "precio_venta": 20,
+    "imagen": "vestido_fiesta.jpg",
+    "categoria": "Vestido"
+  },
+  {
+    "id": 25,
+    "nombre": "Sneakers casual",
+    "descripcion": "Sneakers casuales con suela de goma y detalle de logo lateral.",
+    "precio_compra": 59.99,
+    "precio_venta": 20,
+    "imagen": "sneakers_casual.jpg",
+    "categoria": "Calzado"
+  }
+]
