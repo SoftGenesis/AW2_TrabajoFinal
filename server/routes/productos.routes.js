@@ -1,4 +1,3 @@
-
 import { Router } from "express"
 import {readFile, writeFile} from 'fs/promises'
 
@@ -40,6 +39,32 @@ router.put('/changePrice', (req, res) =>{
         res.status(200).json(`Precio del producto modificado`)
     }catch(error){
         res.status(500).json(error)
+    }
+})
+
+router.get('/byId/:id', (req, res) =>{
+     const id = req.params.id
+     try{
+        const data = itemData.filter(e => e.id == id)
+        if(data && data.length > 0){
+            console.log(data)
+            res.status(200).json(data)
+            }else{
+                res.status(204)
+            } 
+        }catch(error){
+            console.log(error)
+            res.status(400)
+        }
+})
+
+router.get('/', (req, res) =>{
+    try{
+        res.status(200).json(itemData)
+    }
+    catch(error){
+        console.log(error)
+        res.status(500).json({error: 'Error al obtener productos'})
     }
 })
 
