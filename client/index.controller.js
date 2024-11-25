@@ -5,15 +5,14 @@ const categoryLinks = document.querySelectorAll('.category-link')
 let arr = ["Remeras", "Pantalones", "Calzado", "Accesorios", "Vestido", "Bikini", "Camisas", "Abrigos","Faldas"]
 const homeContent = document.querySelector('.home-content')
 const articuloCard = document.querySelector('.articulo')
-const addToCartButton = document.querySelector('.add-to-cart-button');
 
 const addToCart = (product, quantity) => {
-    let cartItems = JSON.parse(localStorage.getItem('cart')) || [];
+    let cartItems = JSON.parse(localStorage.getItem('cart')) || []
 
-    const existingProductIndex = cartItems.findIndex(item => item.title === product.title);
+    const existingProductIndex = cartItems.findIndex(item => item.title === product.title)
 
     if (existingProductIndex !== -1) {
-        cartItems[existingProductIndex].quantity += quantity;
+        cartItems[existingProductIndex].quantity += quantity
     } else {
         cartItems.push({ ...product, quantity })
     }
@@ -21,12 +20,20 @@ const addToCart = (product, quantity) => {
     localStorage.setItem('cart', JSON.stringify(cartItems))
 }
 
+
     getAllItems().then(productos =>{
         const card_container = document.querySelector('.card-container')
         
         productos.forEach(producto =>{
             const articulo = crearArticulo(producto)
             card_container.appendChild(articulo)
+
+            const addToCartButton = articulo.querySelector('.add-to-cart-button')
+            addToCartButton.addEventListener('click', () => {
+              const quantityInput = articulo.querySelector('.quantity-input')
+              const quantity = parseInt(quantityInput.value, 10)
+              addToCart(producto, quantity)
+            })
         })
 
         homeContent.addEventListener('click', () =>{
@@ -35,10 +42,11 @@ const addToCart = (product, quantity) => {
                 const articulo = crearArticulo(producto)
                 card_container.appendChild(articulo)
 
+                const addToCartButton = articulo.querySelector('.add-to-cart-button')
                 addToCartButton.addEventListener('click', () => {
-                    const quantityInput = articuloCard.querySelector('.quantity-input');
-                    const quantity = parseInt(quantityInput.value, 10);
-                    addToCart(producto, quantity);
+                  const quantityInput = articulo.querySelector('.quantity-input')
+                  const quantity = parseInt(quantityInput.value, 10)
+                  addToCart(producto, quantity)
                 })
             }) 
         })
@@ -62,10 +70,11 @@ categoryLinks.forEach(link =>{
                         const articulo = crearArticulo(producto)
                         card_container.appendChild(articulo)
 
+                        const addToCartButton = articulo.querySelector('.add-to-cart-button')
                         addToCartButton.addEventListener('click', () => {
-                            const quantityInput = articulo.querySelector('.quantity-input');
-                            const quantity = parseInt(quantityInput.value, 10);
-                            addToCart(producto, quantity);
+                          const quantityInput = articulo.querySelector('.quantity-input')
+                          const quantity = parseInt(quantityInput.value, 10)
+                          addToCart(producto, quantity)
                         })
                     })
                 })

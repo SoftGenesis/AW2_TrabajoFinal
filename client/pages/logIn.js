@@ -3,16 +3,16 @@ document.getElementById("logBtn").addEventListener("click", function () {
     const password = document.getElementById("password").value;
 
     if (email === "" || password === "") {
-        alert("Debe ingresar su correo electrónico y contraseña.");
+        alert("Debe ingresar su correo electrónico y contraseña.")
     } else {
        
-        const storedUserData = sessionStorage.getItem(email);
+        const storedUserData = sessionStorage.getItem(email)
 
         if (storedUserData) {
             let user = JSON.parse(storedUserData)
 
             if (user.password === password) {
-                window.location.href = "/index.html"
+                window.location.href = "/client/index.html"
             } else {
                 alert("La contraseña es incorrecta. Inténte nuevamente.")
             }

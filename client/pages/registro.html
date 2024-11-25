@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Registro</title>
+    <script src="https://cdn.tailwindcss.com"></script> <!--Tailwind-->
+</head>
+<body class="bg-gray-100 font-sans">
+
+    <div class="flex justify-center items-center min-h-screen bg-gray-200">
+            <div class="bg-white p-8 rounded-lg shadow-lg w-full sm:w-96">
+                <div class="presentation ">
+                <div class="presentation text-center mb-6">
+                    <h1 class="text-3xl font-semibold text-gray-700">Negocio Registro</h1>
+                </div>
+
+            <div class="login space-y-4">
+                <div class="credentials">
+                    <input id="name" type="text" placeholder="Nombre" class="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500">
+                    <br><br>
+                    <input id="lastName" type="text" placeholder="Apellido" class="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500">
+                    <br><br>
+                    <input id="email" type="text" placeholder="Email" class="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500">
+                    <br><br>
+                    <input id="password" type="password" placeholder="Password" class="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500">
+                    <br><br>
+
+                    <button id="signBtn" class="w-full bg-indigo-600 text-white p-3 rounded-md hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500">Registrarme</button>
+                </div>
+                <div class="register">
+                    <p>¿Ya tienes cuenta?</p>
+                    <button id="toggleButton"><a href="./logIn.html">Volver al Login</a></button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="./registro.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</body>
+</html>
