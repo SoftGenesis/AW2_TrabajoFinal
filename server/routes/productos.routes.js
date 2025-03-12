@@ -1,70 +1,155 @@
 import { Router } from "express"
-import {readFile, writeFile} from 'fs/promises'
+import path from 'path'
+import multer from 'multer'
+import { createProd, findAll, findById, findByNamePop, findIdByName,
+    findPriceByName, findByCat, updateById, updatePById, updateSById} from "../db/actions/product.actions.js"
 
-/*Rutas de Productos*/
-const fileItems = await readFile('data/productos.json', 'utf8')
-const itemData = JSON.parse(fileItems)
 const router = Router()
 
-/*Obtener item por su Id*/
-router.get('/byCat/:categoria', (req, res) => {
-    const categoria = req.params.categoria
-    
+const storageStrategy = multer.diskStorage({
+    destination: './assets',
+    filename: (req, file, cb) => {
+        cb(null, file.originalname);
+    }
+});
+
+const assets = multer({ storage: storageStrategy });
+
+/////////Seccion Find con Get
+router.get('/', async(req, res) =>{
     try{
-        const result = itemData.filter(e => e.categoria === categoria)
-        if(result){
-            res.status(200).json(result)
-        }else{
-            res.status(400).json(`Categoria no existente...`)
-        }
+        const result = await findAll()
+        res.status(200).json(result)
+    }
+    catch(error){
+        res.status(400).json()
+    }
+})
+
+router.get('/findPriceByName/:name', async(req, res) =>{
+    const name = req.params.name
+    try{
+        const result = await findPriceByName(name)
+        res.status(200).json(result)
+    }catch(e){
+        res.status(400).json()
+    }
+})
+
+router.get('/byNamePop/:name', async(req, res) =>{
+    const name = req.params.nombre
+    try{
+        const result = await findByNamePop(name)
+        res.status(200).json(result)
+    }catch(e){
+        res.status(400).json()
+    }
+})
+
+router.get('/byName/:name', async(req, res) =>{
+    const name = req.params.nombre
+    try{
+        const result = await findIdByName(name)
+        res.status(200).json(result)
+    }catch(e){
+        res.status(400).json()
+    }
+})
+
+router.get('/byId/:id', async(req, res) =>{
+     const id = req.params.id
+     try{
+        const result = await findById(id)
+        res.status(200).json(result)
+    }catch(e){
+        res.status(400).json()
+    }
+})
+
+router.get('/byCat/:categoria', async(req, res) => {
+    const categoria = req.params.categoria
+    try{
+        const result = await findByCat(categoria)
+        res.status(200).json(result)
     }catch(error){
         res.status(590).json(error)
     }
 })
 
+///////////////Seccion Update con PUT
 /*Cambiar Precio de cierto Item*/
-router.put('/changePrice', (req, res) =>{ 
+router.put('/changePrice', async(req, res) =>{ 
     const id = parseInt(req.body.id)
     const newPrice = parseFloat(req.body.newP)
     const typePrice = parseFloat(req.body.typeP)
 
     try{
-        const index = itemData.findIndex(e => e.id === id)
+        const result = ""
         if(typePrice == 1){
-            itemData[index].precio_compra = newPrice
+            result = await updateBuyPrice(id, newPrice, typePrice)
         }else{
-            itemData[index].precio_venta = newPrice
+            result = await updateSalePrice(id, newPrice, typePrice)
         }
-        writeFile('./data/productos.json', JSON.stringify(itemData, null, 2))
-        res.status(200).json(`Precio del producto modificado`)
+        console.log(result)
+        res.status(200).json(result)
     }catch(error){
         res.status(500).json(error)
     }
 })
 
-router.get('/byId/:id', (req, res) =>{
-     const id = req.params.id
-     try{
-        const data = itemData.filter(e => e.id == id)
-        if(data && data.length > 0){
-            console.log(data)
-            res.status(200).json(data)
-            }else{
-                res.status(204)
-            } 
-        }catch(error){
-            console.log(error)
-            res.status(400)
-        }
+/*Cambiar nombre */
+router.put('/updateName/:id', async(req, res) =>{
+    const id = req.params.id
+    const {nombre, descripcion} = req.body
+    try{
+        const result = await updateById(id, nombre, descripcion)
+        console.log(result)
+        res.status(200).json(result)
+    }catch(e){
+        res.status(400).json()
+    }
 })
 
-router.get('/', (req, res) =>{
+router.put('/updatePById/:id', async(req, res) =>{
+    const id = req.params.id
+    const {nombre, precio_venta} = req.body
     try{
-        res.status(200).json(itemData)
+        const result = await updatePById(id, nombre, precio_venta)
+        console.log(result)
+        res.status(200).json(result)
+    }catch(e){
+        res.status(400).json()
     }
-    catch(error){
-        console.log(error)
-        res.status(500).json({error: 'Error al obtener productos'})
+})
+
+router.put('/updateSById/:id', async(req, res) =>{
+    const id = req.params.id
+    const {name, stock} = req.body
+    try{
+        const result = await updateSById(id, name, stock)
+        console.log(result)
+        res.status(200).json(result)
+    }catch(e){
+        res.status(400).json()
+    }
+})
+
+///////////Seccion Create con POST
+router.post('/create', assets.array('images', 10), async(req, res) =>{
+    const {nombre, descripcion, precio_compra, precio_venta, stock, categoria} = req.body
+    console.log("req.files:", req.files); // Agregamos log
+    try{
+        const product = await createProd({nombre, descripcion, precio_compra, precio_venta, stock, categoria})
+        if (req.files && req.files.length > 0) {
+            const imagePaths = req.files.map(file => path.join('./assets', file.originalname));
+            product.images = imagePaths;
+            await product.save();
+        }
+        //console.log(result)
+        res.status(200).json(product)
+    }catch(err){
+        console.log(err)
+        res.status(400).json()
     }
 })
 

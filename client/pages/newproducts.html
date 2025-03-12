@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ingresos</title>
+    <script src="https://cdn.tailwindcss.com"></script> <!--Tailwind-->
+</head>
+<body class="min-h-screen bg-gray-200">
+    <!--flex items-center justify-center"-->
+
+        
+<!---->
+<div class="presentation ">
+    <div class="presentation text-center mb-6">
+        <h1 class="text-3xl font-semibold text-gray-700">Ingresos</h1>
+    </div>
+</div>
+<div class="flex justify-center items-center">
+    <div class="grid grid-cols-1 xl:grid-cols-2 gap-2.5 px-2.5 py-2.5">
+        <form class="flex flex-col items-center gap-6 p-7 md:flex-row md:gap-8" id="newItem">
+            <div class="bg-white p-8 rounded-lg shadow-lg w-full md:max-w-lg">
+                <div class="credentials">
+                    <div class="presentation text-center mb-6">
+                        <h1 class="text-3xl font-semibold text-gray-700">Ingreso de Productos</h1>
+                    </div>
+                    <input id="nameInput" type="text" placeholder="Nombre del Producto" class="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500">
+                    <br><br>
+                    <textarea id="descInput" type="text" placeholder="Descripcion del Producto" class="w-full p-6 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500"></textarea>
+                    <br><br>
+                    <input id="priceCInput" type="number" placeholder="Precio de Compra" class="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500">
+                    <br><br>
+                    <input id="priceVInput" type="number" placeholder="Precio de Venta" class="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500">
+                    <br><br>
+                    <input id="stockInput" type="number" placeholder="Stock" class="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500">
+                    <br><br>
+                    <select name="catMenu" id="catSelect" 
+                    class="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500">
+                    </select>
+                    <br><br>
+                    <input id="imageInput" type="file" name="images" multiple="true" accept="image/*" placeholder="Imagen" 
+                    class="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500">
+                    <br><br>                    
+
+                    <input id="addItem" type="submit" class="bg-green-500 text-slate-900 font-semibold 
+                    rounded-md cursor-pointer p-3 my-3 w-full hover:bg-green-600 col-span-2" value="Guardar">
+                </div>
+            </div>
+        </form>
+            <!--<div class="register">
+                <p>Regresar</p>
+                <button id="toggleButton"><a href="index.html">Volver a Home</a></button>
+            </div>-->
+            
+        <form class="flex flex-col items-center gap-6 p-7 md:flex-row md:gap-8" id="newCat">
+            <div class="bg-white p-8 rounded-lg shadow-lg w-full md:max-w-lg">
+            <!--CATEGORIAS-->
+                <div class="credentials">
+                    <div class="presentation text-center mb-6">
+                        <h1 class="text-3xl font-semibold text-gray-700">Crear Categorias</h1>
+                    </div>
+                    <input id="nameCat" type="text" placeholder="Nombre de Categoria" class="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500">
+                    <br>                  
+
+                    <input type="submit" class="bg-green-500 text-slate-900 font-semibold 
+                    rounded-md cursor-pointer p-3 my-3 w-full hover:bg-green-600 col-span-2" value="Guardar">
+                </div>
+                <div class="list">
+                </div>
+                <div class="relative overflow-hidden shadow-md rounded-lg">
+                    <table class="table-fixed w-full text-left">
+                        <thead class="bg-[#fbfffb] text-[#919191]" style="background-color: #fbfffb; color: #919191;">
+                            <tr>
+                                <td class="py-1 border border-gray-200   p-4" contenteditable="true">Lista de Categorias</td>
+                            </tr>
+                        </thead>
+                        <tbody class="" id="catLst" style="background-color: #d8f2d0; color: #6b7280;">
+                            <!--JS-->
+                        </tbody>
+                    </table>
+                </div>    
+            </div>
+        </form>
+        
+        <article class="flex flex-col items-center gap-6 p-7 md:flex-row md:gap-8" id="forms">    
+            <div class="bg-white p-8 rounded-lg shadow-lg w-full md:max-w-lg">
+                <!--ACTUALIZACION PRECIOS-->
+                <form id="update">
+                    <div class="credentials">
+                        <div class="presentation text-center mb-6">
+                            <h1 class="text-3xl font-semibold text-gray-700">Actualizar Valores</h1>
+                        </div>
+                        <input id="namePInput" type="text" placeholder="Nombre del Producto" class="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500">
+                        <br><br>
+                        <input id="pricePInput" type="number" placeholder="Precio" class="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500">
+                        <br><br>
+                                         
+
+                        <div class="flex col-span-2 gap-2">
+                            <input id="buscarP" type="submit" class="bg-green-500 text-slate-900 font-semibold 
+                            rounded-md cursor-pointer p-3 my-3 w-full hover:bg-green-600 col-span-2" value="Buscar">
+                            <input id="updP" type="submit" class="bg-green-500 text-slate-900 font-semibold 
+                            rounded-md cursor-pointer p-3 my-3 w-full hover:bg-green-600 col-span-2" value="Actualizar">                                
+                        </div>
+                    </div>
+                </form>
+                <!--ACTUALIZACION STOCK-->
+                <div class="credentials">
+                    <div class="presentation text-center mb-6">
+                        <h1 class="text-3xl font-semibold text-gray-700">Actualizar Stock</h1>
+                    </div>
+                    <input id="nameSInput" type="text" placeholder="Nombre del Producto" class="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500">
+                    <br><br>
+                    <input id="stockSInput" type="number" placeholder="Stock" class="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500">                  
+
+                    <input id="updS" type="submit" class="bg-green-500 text-slate-900 font-semibold 
+                    rounded-md cursor-pointer p-3 my-3 w-full hover:bg-green-600 col-span-2" value="Actualizar">
+                </div>
+            </div>
+        </article>
+    </div>
+</div>
+<script type="module" src="./newproducts.js"></script>
+</body>
+</html>
